@@ -36,3 +36,5 @@ frontend/.pnpm-debug.log*
 
 
 # backend
+
+backend/.env
