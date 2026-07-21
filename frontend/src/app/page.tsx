@@ -9,7 +9,10 @@ interface ChatMsg {
   latencyMs?: number;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? "https://novachat-xnfx.onrender.com";
+
+console.log(`${API_URL}/chat`);
 
 export default function Home() {
   const [messages, setMessage] = useState<ChatMsg[]>([]);
@@ -53,7 +56,7 @@ export default function Home() {
 
       if (!res.ok) {
         const body = await res.json().catch(() => null);
-        throw new Error(body?.details || `Request Faild ${res.status}`);
+        throw new Error(body?.details || `Request Failed ${res.status}`);
       }
 
       const data = await res.json();

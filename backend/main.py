@@ -55,7 +55,7 @@ def health_check():
 @app.post('/chat')
 def chat(request: ChatRequest):
     if not request.messages:
-        raise HTTPException(status_code=400, detail="messages must not be empty")
+        raise HTTPException(status_code=400, details="messages must not be empty")
 
     lc_messages = [SystemMessage(content=SYSTEM_PROMPT)]
     for msg in request.messages:
