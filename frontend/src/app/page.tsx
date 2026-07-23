@@ -12,8 +12,6 @@ interface ChatMsg {
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL ?? "https://novachat-xnfx.onrender.com";
 
-console.log(`${API_URL}/chat`);
-
 export default function Home() {
   const [messages, setMessage] = useState<ChatMsg[]>([]);
   const [input, setInput] = useState("");
